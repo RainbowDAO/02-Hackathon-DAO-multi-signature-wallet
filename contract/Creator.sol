@@ -13,8 +13,14 @@ contract Creator {
     address[] private multiSignArray;
     address private uniswapFactory;
     address private uniswapRouter;
+    address private lengdingPool;
     modifier onlyMultiSign{
         require(approved[msg.sender] == true);
+        _;
+    }
+    
+    modifier onlyOwner{
+        require(msg.sender == owner);
         _;
     }
     
@@ -33,15 +39,18 @@ contract Creator {
         return true;
     }
     
-    function setFactory(address _factory) external returns(bool){
-        require(msg.sender == owner);
+    function setFactory(address _factory) onlyOwner external returns(bool){
         uniswapFactory = _factory;
         return true;
     }
     
-    function setRouter(address _router) external returns(bool){
-        require(msg.sender == owner);
+    function setRouter(address _router) onlyOwner external returns(bool){
         uniswapRouter = _router;
+        return true;
+    }
+    
+    function setLending(address _lending) onlyOwner external returns(bool){
+        lengdingPool = _lending;
         return true;
     }
     
@@ -51,6 +60,10 @@ contract Creator {
     
     function router() public view returns(address){
         return uniswapRouter;
+    }
+    
+    function lending() public view returns(address){
+        return lengdingPool;
     }
     
     function getMultiSignAddr(address _account,uint _index) public view returns(address){
