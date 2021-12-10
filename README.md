@@ -1,1 +1,1 @@
-# 03-Hackathon-DAO-multi-signature-wallet
+# 02-Hackathon-DAO-multi-signature-wallet
