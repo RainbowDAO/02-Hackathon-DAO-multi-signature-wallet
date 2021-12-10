@@ -204,6 +204,7 @@ export default {
 
     },
     signTransaction(index) {
+      let loading = this.$loading()
       this.$store.dispatch("multiSign/signTransaction", {
         address: this.mulAddress,
         transactionId: index,
@@ -212,9 +213,14 @@ export default {
           message: "signTransaction success",
           type: "success"
         })
+        loading.close()
+      }).catch(err=>{
+        this.$message.error(err)
+        loading.close()
       })
     },
     creatTransaction() {
+      let loading = this.$loading()
       this.$store.dispatch("multiSign/creatTransaction", {
         address: this.mulAddress,
         token: this.form.token,
@@ -226,24 +232,37 @@ export default {
           type: "success"
         })
         this.getData()
+        loading.close()
+      }).catch(err=>{
+        this.$message.error(err)
+        loading.close()
       })
     },
     changeManage() {
-      console.log(this.form2.tap)
+      let loading = this.$loading()
       this.$store.dispatch("multiSign/changeManage", {
         address: this.mulAddress,
         account: this.form2.account,
         tap: this.form2.tap
       }).then(() => {
         this.$message.success("changeManage success")
+        loading.close()
+      }).catch(err=>{
+        this.$message.error(err)
+        loading.close()
       })
     },
     changeSignature() {
+      let loading = this.$loading()
       this.$store.dispatch("multiSign/changeSignature", {
         address: this.mulAddress,
         num: this.mulNumber
       }).then(() => {
         this.$message.success("changeSignature success")
+        loading.close()
+      }).catch(err=>{
+        this.$message.error(err)
+        loading.close()
       })
     }
   }

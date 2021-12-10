@@ -21,11 +21,13 @@ const actions = {
     }) {
         console.log(minSignCount, manageArr)
         judgeToken(rootState)
-        return new Promise((resolve) => {
+        return new Promise((resolve,reject) => {
             state.token.methods.creatNewMultiSign(minSignCount, manageArr).send({
                 from: rootState.app.account,
             }).then(res => {
                 resolve(res)
+            }).catch(err=>{
+                reject(err)
             })
         })
     },

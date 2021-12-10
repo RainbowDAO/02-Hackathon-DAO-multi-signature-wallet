@@ -72,7 +72,7 @@
         <div class="choose-content">
           <div class="choose-item" v-for="item in coinList" :key="item.name" @click="chooseHandle(item)">
             <div class="add-coin" @click="addCoin(item)" v-if="item.name!='ETH'">
-              加到钱包
+              add to wallet
             </div>
             {{ item.name }}
           </div>
@@ -262,7 +262,7 @@ export default {
         overflow-x: hidden;
 
         &::-webkit-scrollbar {
-          width: 1px; /*高宽分别对应横竖滚动条的尺寸*/
+          width: 1px;
           height: 1px;
         }
 

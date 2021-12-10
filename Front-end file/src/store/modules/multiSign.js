@@ -20,11 +20,13 @@ const actions = {
         idx
     }) {
         judgeToken(rootState,address)
-        return new Promise((resolve) => {
+        return new Promise((resolve,reject) => {
             state.token.methods.getPendingTransactionById(idx).call({
                 from: rootState.app.account,
             }).then(res => {
                 resolve(res)
+            }).catch(err=>{
+                reject(err)
             })
         })
     },
@@ -32,11 +34,13 @@ const actions = {
         address,
     }) {
         judgeToken(rootState,address)
-        return new Promise((resolve) => {
+        return new Promise((resolve,reject) => {
             state.token.methods.getPendingTransactions().call({
                 from: rootState.app.account,
             }).then(res => {
                 resolve(res)
+            }).catch(err=>{
+                reject(err)
             })
         })
     },
@@ -45,11 +49,13 @@ const actions = {
         transactionId,
     }) {
         judgeToken(rootState,address)
-        return new Promise((resolve) => {
+        return new Promise((resolve,reject) => {
             state.token.methods.signTransaction(transactionId).send({
                 from: rootState.app.account,
             }).then(res => {
                 resolve(res)
+            }).catch(err=>{
+                reject(err)
             })
         })
     },
@@ -59,11 +65,13 @@ const actions = {
         to,
     }) {
         judgeToken(rootState,address)
-        return new Promise((resolve) => {
+        return new Promise((resolve,reject) => {
             state.token.methods.creatTransaction(token, to, 10).send({
                 from: rootState.app.account,
             }).then(res => {
                 resolve(res)
+            }).catch(err=>{
+                reject(err)
             })
         })
     },
@@ -73,11 +81,13 @@ const actions = {
         tap
     }) {
         judgeToken(rootState,address)
-        return new Promise((resolve) => {
+        return new Promise((resolve,reject) => {
             state.token.methods.changeManage(  account, tap).send({
                 from: rootState.app.account,
             }).then(res => {
                 resolve(res)
+            }).catch(err=>{
+                reject(err)
             })
         })
     },
@@ -86,31 +96,37 @@ const actions = {
         num
     }) {
         judgeToken(rootState,address)
-        return new Promise((resolve) => {
+        return new Promise((resolve,reject) => {
             state.token.methods.changeSignature(num).send({
                 from: rootState.app.account,
             }).then(res => {
                 resolve(res)
+            }).catch(err=>{
+                reject(err)
             })
         })
     },
     getMultiSignAddr({rootState},index) {
         judgeToken(rootState)
-        return new Promise((resolve) => {
+        return new Promise((resolve, reject) => {
             state.token.methods.getMultiSignAddr(rootState.app.account,index).call({
                 from: rootState.app.account,
             }).then(res => {
                 resolve(res)
+            }).catch(err=>{
+                reject(err)
             })
         })
     },
     managers({rootState}) {
         judgeToken(rootState)
-        return new Promise((resolve) => {
+        return new Promise((resolve, reject) => {
             state.token.methods.managers(rootState.app.account).call({
                 from: rootState.app.account,
             }).then(res => {
                 resolve(res)
+            }).catch(err=>{
+                reject(err)
             })
         })
     },
