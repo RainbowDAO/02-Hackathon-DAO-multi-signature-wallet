@@ -80,6 +80,10 @@ export default {
     z-index: 1;
     min-width: 1000px;
     min-height: 570px;
+    .no-data{
+      text-align: center;
+      padding: 10px 0;
+    }
     .el-dialog__body{
       text-align: center;
       padding: 30px;

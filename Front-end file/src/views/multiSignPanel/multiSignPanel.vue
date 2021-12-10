@@ -52,8 +52,8 @@
         <div class="transition-panel">
           <div class="transition" v-show="transitionIndex==0">
             <div class="transition-list">
-              <div class="item no-data">
-                NO DATA
+              <div class="no-data" v-show="transitionList.length==0">
+                <img src="../../assets/img/no-data.png" alt="">
               </div>
               <div class="item" v-for="(item, index) in transitionList" :key="index">
                 <div class="status">

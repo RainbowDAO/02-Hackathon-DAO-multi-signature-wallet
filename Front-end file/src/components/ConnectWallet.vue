@@ -11,7 +11,7 @@
       <div class="connect-status-box animate__animated  animate__backInDown" @click.stop>
         Connected with {{ connectArr[connectIdx] }}
         <div class="connect-status" @click="disConnect" v-show="connectIdx!=1">
-          unConnect
+          disconnect
         </div>
       </div>
     </div>

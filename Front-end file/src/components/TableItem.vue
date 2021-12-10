@@ -23,7 +23,7 @@
 
       <div class="table-item-operate">
         <el-button class="button-view table-item-view" @click="isShowDetail=!isShowDetail" v-if="tableData.detailArr.length>=0">
-          详情 <i class="el-icon-arrow-down"></i>
+          Detail <i class="el-icon-arrow-down"></i>
         </el-button>
         <el-button v-if="operateRName" @click="$emit('operateRClick',tableData)"
                    class="button1 table-item-operate-detail">
@@ -46,7 +46,7 @@
           <template v-for="(item,index) in tableData.detailArr">
             <div class="item" v-if="index < 5" :key="index">
               <div v-if="item.type=='operate'">
-                操作
+                Operate
               </div>
               <div style="text-align:center">{{ item.title }}</div>
             </div>
@@ -68,7 +68,7 @@
           <template v-for="(item,index) in tableData.detailArr">
             <div class="item" v-if="index >= 5" :key="index">
               <div v-if="item.type=='operate'">
-                操作
+                Operate
               </div>
               <div v-else>
                 {{ item.title }}
