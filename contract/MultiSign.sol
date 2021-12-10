@@ -1,7 +1,8 @@
 pragma solidity ^0.6.0;
 pragma experimental ABIEncoderV2;
-import "../interface/IERC20.sol";
-import "../interface/IUniswapV2Router01.sol";
+import "./interface/IERC20.sol";
+import "./interface/IUniswapV2Router01.sol";
+import "./interface/ILendingPool.sol";
 
 contract MultiSign{
     mapping (address => bool) public managers;
@@ -16,7 +17,7 @@ contract MultiSign{
         address to;
         uint amount;
         bool goal;  //true: add manager ,false:remove manager 
-        uint8 kind; //4:addLiquidity 3: manage 2:signature 1:transaction
+        uint8 kind; //5:lending  4:addLiquidity 3: manage 2:signature 1:transaction
         uint newMinSignatures;
         uint8 signatureCount;
         
@@ -26,7 +27,7 @@ contract MultiSign{
     
     mapping (uint => mapping(address => bool)) public signatures;
     mapping (uint => Transaction) public transactions;
-    uint[] private pendingTransactions;
+    uint[] public pendingTransactions;
     
     modifier isManager{
         require(managers[msg.sender] == true);
@@ -139,7 +140,11 @@ contract MultiSign{
         if(transaction.kind == 4 && transaction.signatureCount >= MIN_SIGNATURES){
             _addLiquidity(transaction.token,transaction.secToken,transaction.amount,transaction.secAmount);
             transaction.status = true;
-            emit ManagerChanged(transaction.to, transaction.goal,transactionId);
+        }
+        //lending
+        if(transaction.kind == 5 && transaction.signatureCount >= MIN_SIGNATURES){
+            _lending(transaction.token,transaction.amount);
+            transaction.status = true;
         }
     }
     
@@ -184,7 +189,7 @@ contract MultiSign{
     
     function creatLiquidity(address tokenA,address tokenB,uint amountA,uint amountB) isManager public returns(bool){
         require(IERC20(tokenA).balanceOf(address(this)) >= amountA,"not enongh");
-        require(IERC20(tokenB).balanceOf(address(this)) >= amountA,"not enongh");
+        require(IERC20(tokenB).balanceOf(address(this)) >= amountB,"not enongh");
         
         uint transactionId = transactionIdx++;
         Transaction memory transaction;
@@ -195,6 +200,22 @@ contract MultiSign{
         transaction.secToken = tokenB;
         transaction.secAmount = amountB;
         transaction.kind = 4;
+        transactions[transactionId] = transaction;
+        pendingTransactions.push(transactionId);
+        emit TransactionCreated(msg.sender, transactionId);
+        
+    }
+
+    function creatLending(address token,uint amount) isManager public returns(bool){
+        require(IERC20(token).balanceOf(address(this)) >= amount,"not enongh");
+
+        uint transactionId = transactionIdx++;
+        Transaction memory transaction;
+        transaction.status = false;
+        transaction.from = address(this);
+        transaction.token = token;
+        transaction.amount = amount;
+        transaction.kind = 5;
         transactions[transactionId] = transaction;
         pendingTransactions.push(transactionId);
         emit TransactionCreated(msg.sender, transactionId);
@@ -220,6 +241,7 @@ contract MultiSign{
         return true;
     }
     
+    
     // function addLiquidityETH(address token,uint amount,address router) payable public returns(bool){
     //     // address router = creator.router();
     //     uint deadline = block.timestamp + 60;
@@ -229,6 +251,13 @@ contract MultiSign{
     //     liquidity[ETH_ADDR][token] += qr;
     //     return true;
     // }
+
+    function _lending(address token,uint amount) internal returns(bool){
+        address lending = creator.lending();
+        IERC20(token).approve(lending,amount);
+        ILendingPool(lending).deposit(token,amount,address(this),0);
+        return true;
+    }
     
     function removeLiquidity(address tokenA,address tokenB) isManager public returns(bool){
         address factory = creator.factory();
@@ -236,6 +265,11 @@ contract MultiSign{
         address pair = IFactory(factory).getPair(tokenA,tokenB);
         uint deadline = block.timestamp + 60;
         IUniswapV2Router01(router).removeLiquidity(tokenA,tokenB,IERC20(pair).balanceOf(address(this)),0,0,address(this),deadline);
+    }
+
+    function withdrawLending(address token,uint amount) isManager public returns(bool){
+        address lending = creator.lending();
+        ILendingPool(lending).withdraw(token,amount,address(this));
     }
     
     function getLiquidity(address pair) public view returns(uint){
@@ -267,6 +301,7 @@ interface ICreator{
     function addMultiSign(address account, address addr) external;
     function factory() external view returns(address);
     function router() external view returns(address);
+    function lending() external view returns(address);
 }
 
 interface IFactory{
