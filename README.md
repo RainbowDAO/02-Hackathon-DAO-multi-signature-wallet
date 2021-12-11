@@ -19,6 +19,7 @@ Rainbowcity Foundation
 ### Submission links
 
 - Website: http://multisign.rainbowdao.io/
+- Hackathon: https://www.rainbowdao.io/Hackathon
 - GitHub repository :https://github.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet
 - Smart contracts (GitHub): https://github.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/tree/main/contracts
 - Frontend code (GitHub):https://github.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/tree/main/Front-end%20file
