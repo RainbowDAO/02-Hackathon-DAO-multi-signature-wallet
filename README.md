@@ -117,7 +117,7 @@ Rainbowcity website ：https://www.rainbowcity.io
 
 
 
-
+### 1.Multi-signature wallet homepage
 
 
 
@@ -126,7 +126,7 @@ Rainbowcity website ：https://www.rainbowcity.io
 
 
 
-
+### 2.Create a new multi-signature wallet.
 
 
 
@@ -134,7 +134,7 @@ Rainbowcity website ：https://www.rainbowcity.io
 
 
 
-
+### 3.Create a new multi-signature wallet.
 
 
 
@@ -142,14 +142,14 @@ Rainbowcity website ：https://www.rainbowcity.io
 
 
 
-
+### 4.Create a new multi-signature wallet.
 
 
 
 ![image](https://raw.githubusercontent.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/main/pic/4.png)
 
 
-
+### 5.Create a new multi-signature wallet.
 
 
 
@@ -158,7 +158,7 @@ Rainbowcity website ：https://www.rainbowcity.io
 
 
 
-
+### 6.Multi-signature wallet creation process.
 
 
 
@@ -167,13 +167,13 @@ Rainbowcity website ：https://www.rainbowcity.io
 
 
 
-
+### 7.The multi-signature wallet was created successfully.
 
 
 ![image](https://raw.githubusercontent.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/main/pic/7.png)
 
 
-
+### 8.Add an existing multi-signature wallet.
 
 
 
@@ -182,7 +182,7 @@ Rainbowcity website ：https://www.rainbowcity.io
 
 
 
-
+### 9.Add an existing multi-signature wallet.
 
 
 
@@ -190,7 +190,7 @@ Rainbowcity website ：https://www.rainbowcity.io
 
 
 
-
+### 10.Add an existing multi-signature wallet.
 
 
 
@@ -198,14 +198,14 @@ Rainbowcity website ：https://www.rainbowcity.io
 
 
 
-
+### 11.Add an existing multi-signature wallet.
 
 
 
 ![image](https://raw.githubusercontent.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/main/pic/11.png)
 
 
-
+### 12.Multi-sign wallet asset vault.
 
 
 
@@ -214,13 +214,26 @@ Rainbowcity website ：https://www.rainbowcity.io
 
 
 
+### 13.Transfer money from a multi-signature wallet.
+
+
+
 
 ![image](https://raw.githubusercontent.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/main/pic/13.png)
 
 
 
+### 14.Multi-sign wallet asset addresses.
+
+
+
 
 ![image](https://raw.githubusercontent.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/main/pic/14.png)
+
+
+
+
+### 15.Multi-signature wallet authorization process.
 
 
 
@@ -231,8 +244,17 @@ Rainbowcity website ：https://www.rainbowcity.io
 
 
 
+### 16.Multi-sign wallet address book.
+
+
+
+
 ![image](https://raw.githubusercontent.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/main/pic/16.png)
 
+
+
+
+### 17.Inject liquidity into DEX with multi-signature wallet assets.
 
 
 
@@ -242,8 +264,16 @@ Rainbowcity website ：https://www.rainbowcity.io
 
 
 
+### 18.Link multi-sign wallet assets with the lending market.
+
+
+
+
 ![image](https://raw.githubusercontent.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/main/pic/18.png)
 
+
+
+### 19.ERC20 token factory
 
 
 
@@ -252,7 +282,17 @@ Rainbowcity website ：https://www.rainbowcity.io
 
 
 
+### 20.ERC20 token details.
+
+
+
+
 ![image](https://raw.githubusercontent.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/main/pic/20.png)
+
+
+
+
+### 21.Add token page.
 
 
 
@@ -260,7 +300,19 @@ Rainbowcity website ：https://www.rainbowcity.io
 
 
 
+
+
+### 22.Set up the information page.
+
+
+
 ![image](https://raw.githubusercontent.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/main/pic/22.png)
+
+
+
+
+### 23.Set up the information page.
+
 
 
 
@@ -269,6 +321,11 @@ Rainbowcity website ：https://www.rainbowcity.io
 
 
 
+### 24.Select the web page.
+
+
+
 ![image](https://raw.githubusercontent.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/main/pic/24.png)
+
 
 
