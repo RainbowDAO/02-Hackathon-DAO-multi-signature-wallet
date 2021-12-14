@@ -93,7 +93,8 @@ This product is suitable for all types of DAO organizations, whether it is a lar
 
 
 - Frontend docs: https://github.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/blob/main/Front-end%20file/README.md
-- 
+
+
 
 ## Project social media: 
 
