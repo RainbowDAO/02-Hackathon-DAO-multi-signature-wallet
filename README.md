@@ -90,6 +90,12 @@ This product is suitable for all types of DAO organizations, whether it is a lar
 - Smart contracts docs: https://github.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/blob/main/contract/README.md
 
 
+Contract Address 
+
+--Kovan Test Network
+
+Creator: 0xF0b4F15495AE189A1F9e1210861aD47f18aD188f
+
 
 
 - Frontend docs: https://github.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/blob/main/Front-end%20file/README.md
