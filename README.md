@@ -21,7 +21,7 @@ Rainbowcity Foundation
 - Website: http://multisign.rainbowdao.io/
 - Hackathon: https://www.rainbowdao.io/Hackathon
 - GitHub repository :https://github.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet
-- Smart contracts (GitHub): https://github.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/tree/main/contracts
+- Smart contracts (GitHub): https://github.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/tree/main/contract
 - Frontend code (GitHub):https://github.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/tree/main/Front-end%20file
 - PIcture (GitHub): https://github.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/tree/main/pic
 
@@ -87,7 +87,11 @@ This product is suitable for all types of DAO organizations, whether it is a lar
 
 
 
-- Smart contracts docs: https://github.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/blob/main/contracts/README.md
+- Smart contracts docs: https://github.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/blob/main/contract/README.md
+
+
+
+
 - Frontend docs: https://github.com/RainbowDAO/03-Hackathon-DAO-multi-signature-wallet/blob/main/Front-end%20file/README.md
 - 
 
